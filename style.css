@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: blue;
+}
+
+
+#field {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    /* Above particles */
+
+}
+
+header {
+    display: flex;
+    padding: 0 100px;
+    align-items: center;
+    top: 0;
+    height: 80px;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    justify-content: space-between;
+    background-color: white;
+    z-index: 100;
+}
+
+header .logo img {
+    width: 150px;
+}
+
+header .links {
+    display: flex;
+    gap: 100px;
+}
+
+header a {
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.hero .content h1 {
+    font-size: 80px;
+    background-color: white;
+
+}
