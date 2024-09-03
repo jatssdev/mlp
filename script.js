@@ -52,7 +52,7 @@ function reset() {
 
 function drawField() {
     ctxField.clearRect(0, 0, canvasField.width, canvasField.height);
-
+    let colors = ['rgba(0,0,255,.8)', 'rgba(135, 206, 235,.8)']
     // Draw particles on top
     for (let x = 0; x < columns; x++) {
         for (let y = 0; y < rows; y++) {
@@ -61,7 +61,7 @@ function drawField() {
             ctxField.save();
             ctxField.translate(x * size, y * size);
             ctxField.rotate(angle);
-            ctxField.strokeStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, 255, 0.8)`; // Gradient colors
+            ctxField.strokeStyle = colors[Math.trunc(Math.random() * 2)]
             ctxField.lineWidth = lineWidth; // Dynamic line width based on scroll
             ctxField.beginPath();
             ctxField.moveTo(0, 0);
