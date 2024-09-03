@@ -10,7 +10,7 @@
 
 
 #field {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100vh;
     left: 0;
@@ -90,8 +90,19 @@ header .arrow .greaterthan span:first-child {
 .hero .content .line {
     background-color: white;
     padding: 20px;
+    display: flex;
+    align-items: center;
     align-self: end;
+    flex-direction: column;
+    gap: 30px;
     height: 80%;
+}
+
+.hero .content .line span {
+    rotate: -90deg;
+    display: inline-block;
+    color: var(--primary);
+
 }
 
 .hero .content h1 {
@@ -168,4 +179,26 @@ header .arrow-container svg {
     margin-left: -8px;
     transition: .3s;
     height: fit-content;
+}
+
+#backgroundVideo {
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    /* Positioning if necessary */
+    top: 0;
+    background-color: red;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    /* Or adjust based on your layout */
+}
+
+#backgroundVideo video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
