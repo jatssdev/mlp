@@ -1,0 +1,204 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: blue;
+}
+
+
+#field {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    /* Above particles */
+
+}
+
+header {
+    display: flex;
+    padding: 0 100px;
+    align-items: center;
+    top: 0;
+    height: 80px;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    justify-content: space-between;
+    background-color: white;
+    z-index: 100;
+}
+
+header .logo img {
+    width: 150px;
+}
+
+header .links {
+    display: flex;
+    gap: 100px;
+}
+
+header a {
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+header nav {
+    display: flex;
+    gap: 60px;
+}
+
+header .link {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+header .arrow .greaterthan span {
+    width: 100px;
+    height: 2px;
+    transform: rotate(-15deg);
+
+    display: inline-block;
+    background-color: var(--primary);
+}
+
+header .arrow .greaterthan span:first-child {
+    transform: rotate(45deg);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.hero .content {
+    display: flex;
+    gap: 20px;
+    padding: 0 50px;
+    height: 100%;
+}
+
+.hero .content .line {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    align-self: end;
+    flex-direction: column;
+    gap: 30px;
+    height: 80%;
+}
+
+.hero .content .line span {
+    rotate: -90deg;
+    display: inline-block;
+    color: var(--primary);
+
+}
+
+.hero .content h1 {
+    color: var(--primary);
+    width: fit-content;
+    padding: 10px;
+    line-height: 1;
+    font-size: 90px;
+    font-weight: 400;
+    background-color: white;
+
+}
+
+.hero .content h3 {
+    color: var(--primary);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-top: 10px;
+    background-color: white;
+
+}
+
+.hero .content .line div {
+    height: 100%;
+    width: 2px;
+    background-color: var(--primary);
+}
+
+.hero .content .text {
+    align-self: center;
+
+}
+
+.arrow-container {
+    display: inline-block;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 100%;
+    display: flex;
+    color: var(--primary);
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.slash {
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+    width: 20px;
+    height: 1px;
+    background-color: var(--primary);
+    transform: rotate(-45deg);
+    margin-left: 13px;
+}
+
+
+header .link:hover .arrow-container .slash {
+    transform: rotate(0deg);
+}
+
+header .link:hover .arrow-container svg {
+    margin-left: 0;
+    opacity: 1;
+
+
+}
+
+header .arrow-container svg {
+    width: 10px;
+    fill: var(--primary);
+    opacity: 0;
+    margin-left: -8px;
+    transition: .3s;
+    height: fit-content;
+}
+
+#backgroundVideo {
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    /* Positioning if necessary */
+    top: 0;
+    background-color: red;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    /* Or adjust based on your layout */
+}
+
+#backgroundVideo video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
