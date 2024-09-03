@@ -8,9 +8,11 @@ let rows;
 let w;
 let h;
 let field;
+let lineWidth; // New variable for line width
 
 function setup() {
     size = 40;
+    lineWidth = 2; // Initial line width
     noise3D = new SimplexNoise(); // Initialize SimplexNoise
     reset();
     window.addEventListener('resize', reset);
@@ -60,7 +62,7 @@ function drawField() {
             ctxField.translate(x * size, y * size);
             ctxField.rotate(angle);
             ctxField.strokeStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, 255, 0.8)`; // Gradient colors
-            ctxField.lineWidth = 2; // Increase the width of the particles
+            ctxField.lineWidth = lineWidth; // Dynamic line width based on scroll
             ctxField.beginPath();
             ctxField.moveTo(0, 0);
             ctxField.lineTo(0, size * length);
@@ -79,6 +81,7 @@ function animate() {
 function handleScroll() {
     const scrollY = window.scrollY;
     size = 40 + scrollY / 10; // Increase the size based on scroll position
+    lineWidth = 2 + scrollY / 10; // Increase the line width based on scroll position
     reset();
 }
 
