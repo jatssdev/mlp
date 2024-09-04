@@ -164,19 +164,42 @@ header .arrow .greaterthan span:first-child {
     margin-left: 13px;
 }
 
+.btn {
+    display: inline-block;
+    border: 2px solid var(--primary);
+    background-color: white;
+    padding: 20px 50px 20px 20px;
+    margin-top: 30px;
+    font-size: 20px;
+    color: var(--primary);
+}
 
-header .link:hover .arrow-container .slash {
+.btn:hover {
+    border: 2px solid green;
+
+}
+
+.btn>div {
+    position: relative;
+    display: flex;
+
+    align-items: center;
+}
+
+header .link:hover .arrow-container .slash,
+.btn:hover .arrow-container .slash {
     transform: rotate(0deg);
 }
 
-header .link:hover .arrow-container svg {
+header .link:hover .arrow-container svg,
+.btn:hover .arrow-container svg {
     margin-left: 0;
     opacity: 1;
 
 
 }
 
-header .arrow-container svg {
+.arrow-container svg {
     width: 10px;
     fill: var(--primary);
     opacity: 0;
@@ -205,4 +228,34 @@ header .arrow-container svg {
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+/* companyDetails  */
+.companyDetails div h1 {
+    font-size: 9.375rem;
+    color: var(--primary);
+}
+
+.companyDetails div p {
+    font-size: 1.375rem;
+    color: var(--primary);
+}
+
+.companyDetails {
+    background-color: white;
+    position: relative;
+    z-index: 100;
+    padding: 100px 150px;
+}
+
+.companyDetails h2 {
+    color: var(--primary);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.companyDetails hr {
+    border: 1px solid var(--primary);
+    margin: 20px 0;
 }

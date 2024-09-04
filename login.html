@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Login</title>
+    <!-- Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@300&display=swap" rel="stylesheet">
+    <!-- Nimbus Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .custom-input {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            color: #fff;
+            font-size: 16px;
+            line-height: 44px;
+        }
+
+        input::placeholder {
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-cover bg-no-repeat h-screen" style="background-image: url('./Bg_login.png');">
+    <!-- Logo Section -->
+    <div class="absolute top-0 left-0 m-8">
+        <img src="./assets/images/login.png" alt="millennium" class="w-32.2">
+    </div>
+
+    <!-- Login Form Section -->
+    <div class="flex items-center justify-center h-full">
+        <div class="max-w-md w-full bg-opacity-50 p-8">
+            <h1 class="text-5xl text-white text-center mb-12" style="font-family: 'Prata', serif; font-weight:300;">
+                Investor Login</h1>
+            <form action="#" method="POST" class="space-y-8">
+                <div class="relative">
+                    <label for="username" class="hidden">User Name</label>
+                    <input type="text" name="username" id="username" placeholder="User Name"
+                        class="w-full px-3 py-2 border-b-2 border-white bg-transparent focus:outline-none focus:border-indigo-500 custom-input"
+                        required>
+                </div>
+                <div class="relative">
+                    <label for="password" class="hidden">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password"
+                        class="w-full px-3 py-2 border-b-2 border-white bg-transparent focus:outline-none focus:border-indigo-500 custom-input"
+                        required>
+                </div>
+                <div>
+                    <button type="submit"
+                        class="w-full py-4 mt-5 border-2 border-white bg-transparent text-white hover:bg-#4D6F8A-200"
+                        style="width:400px;">Submit</button>
+                </div>
+            </form>
+            <div class="mt-4 text-left">
+                <a href="#" class="text-sm text-white hover:text-white">Forgot my password...</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
