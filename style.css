@@ -77,6 +77,10 @@ header .arrow .greaterthan span:first-child {
     display: flex;
     align-items: center;
     height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
 }
 

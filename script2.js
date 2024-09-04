@@ -76,6 +76,10 @@ particlesJS("particles-js", {
                 "enable": true,
                 "mode": "grab"
             },
+            "onscroll": {
+                "enable": true,
+                "mode": "push"
+            },
             "onclick": {
                 "enable": true,
                 "mode": "push"
@@ -109,4 +113,37 @@ particlesJS("particles-js", {
         }
     },
     "retina_detect": true
+});
+
+
+$(document).ready(function () {
+    var $video = $('#backgroundVideo');
+
+
+    function checkScrollPosition() {
+        var scrollY = $(window).scrollTop();
+        var scaleValue = 1 + scrollY / 200; // Adjust the divisor for desired scaling effect
+        $('#particles-js').css('transform', 'scale(' + scaleValue + ')');
+        if (scrollY >= 100) {
+            $('.text *').css({ 'background-color': 'transparent', 'color': 'white' });
+            $('.line').css({ 'background-color': 'transparent' });
+            $('.line span').css({ 'color': 'white' });
+            $('.line div').css({ 'background-color': 'white' });
+            $video.css({ 'opacity': 1, 'z-index': 7 });  // Show video
+            $('.text h1').show();
+        } else {
+            $video.css({ 'opacity': 0, 'z-index': 1 });  // Show video
+
+            $('.text *').css({ 'background-color': 'white', 'color': 'var(--primary)' });
+            $('.line').css({ 'background-color': 'white' });
+            $('.line span').css({ 'color': 'var(--primary)' });
+            $('.line div').css({ 'background-color': 'var(--primary)' });
+        }
+    }
+
+    $(window).on('scroll', checkScrollPosition);
+    checkScrollPosition();
+
+
+
 });

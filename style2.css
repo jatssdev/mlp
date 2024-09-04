@@ -77,12 +77,17 @@ header .arrow .greaterthan span:first-child {
     display: flex;
     align-items: center;
     height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
 }
 
 .hero .content {
     display: flex;
     gap: 20px;
+
     padding: 0 50px;
     height: 100%;
 }
@@ -91,6 +96,8 @@ header .arrow .greaterthan span:first-child {
     background-color: white;
     padding: 20px;
     display: flex;
+    position: relative;
+    z-index: 8;
     align-items: center;
     align-self: end;
     flex-direction: column;
@@ -110,6 +117,8 @@ header .arrow .greaterthan span:first-child {
     width: fit-content;
     padding: 10px;
     line-height: 1;
+    position: relative;
+    z-index: 8;
     font-size: 90px;
     font-weight: 400;
     background-color: white;
@@ -120,6 +129,8 @@ header .arrow .greaterthan span:first-child {
     color: var(--primary);
     font-size: 30px;
     font-weight: 400;
+    position: relative;
+    z-index: 8;
     line-height: 1.4;
     margin-top: 10px;
     background-color: white;
@@ -188,7 +199,7 @@ header .arrow-container svg {
     position: absolute;
     /* Positioning if necessary */
     top: 0;
-    background-color: red;
+
     left: 0;
 
     width: 100%;
@@ -206,14 +217,9 @@ header .arrow-container svg {
 #particles-js {
     position: absolute;
     width: 100%;
-    z-index: 1;
+    z-index: 5;
     height: 100%;
     background-color: transparent;
-    background-image: url("");
-
-
-
-
 
     background-repeat: no-repeat;
     background-size: cover;
