@@ -1,127 +1,152 @@
-const canvasField = document.getElementById('field');
-const ctxField = canvasField.getContext('2d');
+/* ---- particles.js config ---- */
 
-let noise3D;
-let size;
-let columns;
-let rows;
-let w;
-let h;
-let field;
-let lineWidth;
-
-let cursorX = 0;
-let cursorY = 0;
-
-function setup() {
-    size = 40;
-    lineWidth = 2;
-    noise3D = new SimplexNoise(); // Initialize SimplexNoise
-    reset();
-    window.addEventListener('resize', reset);
-    window.addEventListener('mousemove', handleMouseMove); // Add mousemove event listener
-}
-
-function initField() {
-    field = new Array(columns);
-    for (let x = 0; x < columns; x++) {
-        field[x] = new Array(rows);
-        for (let y = 0; y < rows; y++) {
-            field[x][y] = [0, 0];
-        }
-    }
-}
-
-function calculateField() {
-    for (let x = 0; x < columns; x++) {
-        for (let y = 0; y < rows; y++) {
-            let angle = noise3D.noise3D(x / 50, y / 50, performance.now() / 5000) * Math.PI * 2;
-            let length = noise3D.noise3D(x / 100 + 40000, y / 100 + 40000, performance.now() / 5000);
-
-            // Modify angle based on cursor position
-            let dx = cursorX - x * size;
-            let dy = cursorY - y * size;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < 150) { // Adjust the influence radius
-                angle += Math.atan2(dy, dx);
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 80,
+            "density": {
+                "enable": true,
+                "value_area": 800
             }
-
-            field[x][y][0] = angle;
-            field[x][y][1] = length;
+        },
+        "color": {
+            "value": "#961043" // Changed to blue
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nb_sides": 5
+            },
+            "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+            }
+        },
+        "opacity": {
+            "value": 0.5,
+            "random": false,
+            "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+            }
+        },
+        "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#961043", // Changed to blue
+            "opacity": 0.4,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 6,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
         }
-    }
-}
-
-function reset() {
-    const pxRatio = window.devicePixelRatio;
-    w = canvasField.offsetWidth * pxRatio;
-    h = canvasField.offsetHeight * pxRatio;
-    canvasField.width = w;
-    canvasField.height = h;
-    columns = Math.floor(w / size) + 1;
-    rows = Math.floor(h / size) + 1;
-    initField();
-}
-
-function drawField() {
-    ctxField.clearRect(0, 0, canvasField.width, canvasField.height);
-
-    for (let x = 0; x < columns; x++) {
-        for (let y = 0; y < rows; y++) {
-            let angle = field[x][y][0];
-            let length = field[x][y][1];
-            ctxField.save();
-            ctxField.translate(x * size, y * size);
-            ctxField.rotate(angle);
-            ctxField.strokeStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, 255, 0.8)`; // Gradient colors
-            ctxField.lineWidth = lineWidth;
-            ctxField.beginPath();
-            ctxField.moveTo(0, 0);
-            ctxField.lineTo(0, size * length);
-            ctxField.stroke();
-            ctxField.restore();
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "grab"
+            },
+            "onscroll": {
+                "enable": true,
+                "mode": "push"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "push"
+            },
+            "resize": true
+        },
+        "modes": {
+            "grab": {
+                "distance": 140,
+                "line_linked": {
+                    "opacity": 1
+                }
+            },
+            "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            },
+            "remove": {
+                "particles_nb": 2
+            }
         }
-    }
-}
+    },
+    "retina_detect": true
+});
 
-function animate() {
-    calculateField();
-    drawField();
-    requestAnimationFrame(animate);
-}
-
-function handleScroll() {
-    const scrollY = window.scrollY;
-    size = 40 + scrollY / 10; // Increase the size based on scroll position
-    lineWidth = 2 + scrollY / 100; // Increase the line width based on scroll position
-    reset();
-}
-
-// Function to update cursor position
-function handleMouseMove(event) {
-    cursorX = event.clientX * window.devicePixelRatio;
-    cursorY = event.clientY * window.devicePixelRatio;
-}
-
-setup();
-animate();
-
-window.addEventListener('scroll', handleScroll);
 
 $(document).ready(function () {
     var $video = $('#backgroundVideo');
+    let lastScrollTop = 0
 
     function checkScrollPosition() {
         var scrollY = $(window).scrollTop();
+
+
+        if (scrollY > lastScrollTop) {
+            // Scrolling down
+            $('#header').css('top', '-100px'); // Adjust this value based on your header height
+        } else {
+            // Scrolling up
+            $('#header').css('top', '0');
+        }
+
+        lastScrollTop = scrollY;
+
+        var scaleValue = 1 + scrollY / 200; // Adjust the divisor for desired scaling effect
+        $('#particles-js').css('transform', 'scale(' + scaleValue + ')');
         if (scrollY >= 100) {
             $('.text *').css({ 'background-color': 'transparent', 'color': 'white' });
             $('.line').css({ 'background-color': 'transparent' });
             $('.line span').css({ 'color': 'white' });
             $('.line div').css({ 'background-color': 'white' });
-            $video.css('opacity', 1);  // Show video
+            $video.css({ 'opacity': 1, 'z-index': 7 });  // Show video
             $('.text h1').show();
+            $('#header').css({ 'background-color': 'rgba(255, 255, 255, 0.703)' });
         } else {
-            $video.css('opacity', 0);  // Hide video
+            $video.css({ 'opacity': 0, 'z-index': 1 });  // Show video
+            $('#header').css({ 'background-color': 'white' });
             $('.text *').css({ 'background-color': 'white', 'color': 'var(--primary)' });
             $('.line').css({ 'background-color': 'white' });
             $('.line span').css({ 'color': 'var(--primary)' });
@@ -131,4 +156,7 @@ $(document).ready(function () {
 
     $(window).on('scroll', checkScrollPosition);
     checkScrollPosition();
+
+
+
 });
