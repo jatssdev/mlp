@@ -1,5 +1,6 @@
 /* ---- particles.js config ---- */
 
+
 particlesJS("particles-js", {
     "particles": {
         "number": {
@@ -115,6 +116,73 @@ particlesJS("particles-js", {
     "retina_detect": true
 });
 
+$(document).ready(function () {
+    var swiper = new Swiper(".swiper-container-h", {
+        direction: "horizontal",
+        effect: "slide",
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false
+        },
+        parallax: true,
+        speed: 1600,
+        rtl: true,
+        loop: true,
+        loopFillGroupWithBlank: !0,
+
+        mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            eventsTarget: ".swiper-slide",
+            releaseOnEdges: true,
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true
+        },
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: false,
+            draggable: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar"
+        }
+    });
+    var swiper = new Swiper(".swiper-container-h1", {
+        direction: "horizontal",
+        effect: "slide",
+        autoplay: false,
+        parallax: true,
+        speed: 1600,
+        rtl: true,
+        loop: true,
+        loopFillGroupWithBlank: !0,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true
+        },
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: false,
+            draggable: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+            clickable: "true"
+        }
+    });
+});
 
 $(document).ready(function () {
     var $video = $('#backgroundVideo');
@@ -144,9 +212,12 @@ $(document).ready(function () {
             $video.css({ 'opacity': 1, 'z-index': 7 });  // Show video
             $('.text h1').show();
             $('#header').css({ 'background-color': 'rgba(255, 255, 255, 0.703)' });
+            $('#header').css({ 'backdrop-filter': 'blur(20px)' });
         } else {
             $video.css({ 'opacity': 0, 'z-index': 1 });  // Show video
             $('#header').css({ 'background-color': 'white' });
+            $('#header').css({ 'backdrop-filter': 'blur(0)' });
+
             $('.text *').css({ 'background-color': 'white', 'color': 'var(--primary)' });
             $('.line').css({ 'background-color': 'white' });
             $('.line span').css({ 'color': 'var(--primary)' });
@@ -159,4 +230,23 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+    // videos section 
+    $('.openVideoModel').click(function () {
+
+        $('#modelPreviewVideo').attr('src', $(this).attr('data-video'))
+        $('section .videos .videoModel').css({ padding: '100px', left: 0, top: 0, transform: 'translate(0,0) scale(1)' })
+    })
+    $('#closeVideoModel').click(function () {
+
+        $('section .videos .videoModel').css({ padding: '0', left: '50%', top: '50%', transform: 'translate(-50%,-50%) scale(0)' })
+    })
+
+
+
+
 });
+
