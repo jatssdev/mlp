@@ -288,6 +288,12 @@ header .link:hover .arrow-container svg,
     box-sizing: border-box;
 }
 
+.videoSection {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
 section .videos img {
     -ms-interpolation-mode: bicubic;
     border: 0;
@@ -730,4 +736,32 @@ section .videos .arrows svg {
     .swiper-slide .slider-inner .swiper-content p.disc br {
         display: none;
     }
+}
+
+.heroCareer {
+    background-color: white;
+    z-index: 1;
+    position: relative;
+}
+
+.heroCareer .careers {
+    gap: 100px;
+    display: grid;
+    padding: 100px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.heroCareer .careers h1 {
+    font-size: 4rem;
+    font-weight: 500;
+
+}
+
+.heroCareer .careers h1 span {
+    color: var(--primary);
+    margin-left: 80px;
+}
+
+.heroCareer .careers .info p {
+    color: gray;
 }
