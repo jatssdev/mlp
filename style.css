@@ -747,7 +747,7 @@ section .videos .arrows svg {
 .heroCareer .careers {
     gap: 100px;
     display: grid;
-    padding: 100px;
+    padding: 110px 100px;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -764,4 +764,93 @@ section .videos .arrows svg {
 
 .heroCareer .careers .info p {
     color: gray;
+}
+
+.fotterWrapper {
+    padding: 50px;
+    position: relative;
+    z-index: 8;
+    background-color: var(--primary);
+}
+
+.fotterWrapper .fwrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fotterWrapper .fwrap .links {
+    padding-right: 150px;
+}
+
+.fotterWrapper .fwrap .links p {
+    padding: 10px 0;
+}
+
+.fwrap .links p a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+
+.fwrap .fImg {
+    padding: 20px 50px;
+    background-color: white;
+
+
+}
+
+.fwrap .fImg img {
+    width: 150px;
+    padding-top: 10px;
+}
+
+.fNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0;
+    color: white;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin-top: 70px;
+}
+
+.fNav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.fNav ul li {
+    list-style-type: none;
+}
+
+.fNav .copyRight {
+    width: 32%;
+    text-align: center;
+
+}
+
+.fNav .copyRight p {
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+}
+
+.fNav .icons {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.fNav .icons i {
+    border: 1px solid hsla(0, 0%, 100%, 0.3);
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.fNav .icons i:hover {
+    color: hsla(0, 0%, 100%, 0.3);
 }
