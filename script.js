@@ -248,5 +248,28 @@ $(document).ready(function () {
 
 
 
+    // header 
+    $('#peoplelink').mouseenter(showDrop);
+    $('#careerslink').mouseenter(showDrop);
+    $('header').mouseleave(hideDrop);
+
+    function showDrop() {
+        let val = $(this).data('drop'); // Get the data-drop value (people/careers)
+        let className = '.dropdown .' + val; // Target the correct ul and heading
+
+        // Show the dropdown container
+        $('header .dropdown').slideDown('slow');
+
+        // Show the corresponding content (ul) and hide the other
+        $('header .dropdown .careers, header .dropdown .people').hide(); // Hide both first
+        $(className).show('slow'); // Show the correct content
+    }
+
+    function hideDrop() {
+        // Hide the entire dropdown when the mouse leaves the header
+        $('header .dropdown').slideUp('slow');
+    }
+
+
 });
 

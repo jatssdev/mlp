@@ -21,6 +21,45 @@
 
 }
 
+header .dropdown {
+    width: 100%;
+    position: absolute;
+    background-color: rgb(217, 217, 217);
+    top: 100%;
+    left: 0;
+
+    padding: 20px;
+    display: none;
+
+}
+
+header .dropdown>div {
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns: 1fr 1fr;
+}
+
+header .dropdown .content {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+header .dropdown .heading {
+    /* background-color: white; */
+    padding: 20px;
+    color: var(--primary);
+}
+
+header .dropdown .content ul li {
+    margin: 10px 0;
+    list-style: none;
+}
+
+header .dropdown .careers,
+header .dropdown .people {
+    display: none;
+}
+
 header {
     display: flex;
     padding: 0 100px;

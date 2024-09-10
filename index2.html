@@ -15,7 +15,26 @@
 <body>
 
     <header id="header">
-
+        <div class="dropdown">
+            <div>
+                <div class="heading">
+                    <h1 class="careers">Careers</h1>
+                    <h1 class="people">People</h1>
+                </div>
+                <div class="content">
+                    <ul class="people">
+                        <li><a href="#">Option 1</a></li>
+                        <li><a href="#">Option 2</a></li>
+                        <li><a href="#">Option 3</a></li>
+                    </ul>
+                    <ul class="careers">
+                        <li><a href="#">Option 4</a></li>
+                        <li><a href="#">Option 5</a></li>
+                        <li><a href="#">Option 6</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="logo">
             <img src="./assets/logo.png" alt="">
         </div>
@@ -37,7 +56,7 @@
                     </div>
 
                 </div>
-                <div class="link"> <a href="">People</a>
+                <div class="link"> <a href="" data-drop="people" id="peoplelink">People</a>
                     <div class="arrow-container">
                         <div class="slash"></div>
                         <?xml version="1.0" encoding="iso-8859-1"?>
@@ -52,7 +71,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="link"><a href="">Careers</a>
+                <div class="link"><a href="" data-drop="careers" id="careerslink">Careers</a>
                     <div class="arrow-container">
                         <div class="slash"></div>
                         <?xml version="1.0" encoding="iso-8859-1"?>
