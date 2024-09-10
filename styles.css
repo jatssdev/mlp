@@ -1,0 +1,772 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero-section-wrapper {
+  background-color: #F7F7F6;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.text-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding-left: 5%;
+  max-width: 50%;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.secondary-section {
+  background-color: rgb(60, 90, 139);
+  padding: 50px;
+  position: absolute;
+  opacity: 0.8;
+  bottom: 0;
+  width: 50%;
+  text-align: center;
+  z-index: 1;
+}
+
+.secondary-section p {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.approach-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 100px;
+  color: #0f3484;
+}
+
+.approach-title {
+  text-transform: capitalize;
+  z-index: 100;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.approach-divider {
+  flex-grow: 1;
+  margin: 0 20px;
+  border: solid;
+  border-top: 0.5px solid #000;
+}
+
+.approach-description {
+  font-size: 25px;
+  font-family: sans-serif;
+  color: #0f3484;
+  padding: 0 80px 0 80px;
+}
+
+/* Only at Citadel Section */
+.only-at-citadel-wrapper {
+  background-color: #ffffff;
+  padding: 100px 0;
+}
+
+.only-at-citadel-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px;
+  align-items: center;
+}
+
+.only-citadel-title {
+  font-size: 3.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0f3484;
+  width: 400px;
+}
+
+.only-citadel-description {
+  font-size: 1rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #333;
+  width: 450px;
+  padding: 0 100px;
+}
+
+/* Weather Prediction Section */
+.weather-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 100px;
+  color: #0f3484;
+  background-color: #ffffff;
+}
+
+.image-container {
+  width: 40%;
+}
+
+.weather-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.weather-text-container {
+  width: 55%;
+  padding-left: 30px;
+}
+
+.weather-title {
+  font-size: 2.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather-description {
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+/* Strategies Section */
+.strategies-section {
+  background-color: #F7F7F6;
+  padding: 100px 50px;
+}
+
+.title h2 {
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.sub-title {
+  color: #1d4ed8;
+}
+
+.description p {
+  font-size: 1.25rem;
+  color: #4b5563;
+}
+
+/* Grid Adjustments */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted for proper grid alignment */
+  gap: 30px; /* Added gap for proper spacing between cards */
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid #1d4ed8;
+  padding: 20px;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added hover effect for cards */
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.link {
+  font-size: 1rem;
+  color: #2563eb;
+  position: relative;
+  text-decoration: none;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Trigger link hover on image hover */
+.image-container1:hover + .link::after {
+  width: 100%;
+}
+
+.image-container1 {
+  margin-top: 1.5rem;
+  height: 180px; /* Fixed height to ensure consistent image size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+/* Hover on the image triggers link underline */
+.card:hover .link::after {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 25rem;
+  margin-bottom: 5rem;
+}
+
+.strategies-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.strategies-title {
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0f3484;
+  width: 390px;
+}
+
+.strategies-description {
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+}
+
+.strategies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.strategy-item {
+  flex: 1;
+  min-width: 250px;
+  background-color: white;
+  border: 0px solid #ccc;
+  padding: 20px;
+}
+
+.strategy-title {
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0f3484;
+}
+
+.strategy-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.strategy-link {
+  color: #0f3484;
+  text-decoration: none;
+}
+
+.strategy-image {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+
+/* Competitive Advantage Section */
+.competitive-advantage-section {
+  background-color: #0a2a57; /* Dark Blue Background */
+  color: #fff; /* White Text */
+  padding: 80px 50px;
+  margin: 50px 0;
+}
+
+.competitive-advantage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advantage-image-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.advantage-image {
+  margin-top: 50px;
+  width: 35%;
+  transform: translateY(-200px);
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.advantage-text-container {
+  text-align: center;
+  width: 100%;
+}
+
+.advantage-title {
+  font-size: 2.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  color: #3a7bd5; /* Light Blue Text for 'Advantage' */
+}
+
+.advantage-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Columns Styling */
+.advantage-column {
+  flex: 1;
+  padding: 20px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2); /* Light border between columns */
+}
+
+.advantage-column h3 {
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+}
+
+.advantage-column p {
+  font-size: 1rem;
+  font-family: sans-serif;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+}
+
+/* Excellence Section */
+.excellence-section {
+  background-color: #f7f7f6;
+  padding: 100px 50px;
+  color: #1f2937;
+}
+
+.excellence-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.excellence-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.excellence-title {
+  text-align: justify;
+  font-size: 2.8rem;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.highlight1 {
+  color: #1d4ed8;
+}
+
+.excellence-description {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 600px;
+}
+
+/* Awards Grid */
+.awards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.award-card {
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.award-card h3 {
+  font-size: 2.5rem;
+  color: #1d4ed8;
+  margin-bottom: 20px;
+}
+
+.award-card p a {
+  font-size: 1.25rem;
+  color: #1d4ed8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.award-card p a:hover {
+  color: #2563eb;
+}
+
+.award-list {
+  list-style: none;
+  padding: 0;
+}
+
+.award-list li {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+/* Navigation Dots and Controls */
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.dots {
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #1d4ed8;
+}
+
+.controls button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #1d4ed8;
+  transition: color 0.3s;
+}
+
+.controls button:hover {
+  color: #2563eb;
+}
+
+
+
+
+.brilliant-minds-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  padding: 50px 100px;
+}
+
+.brilliant-minds-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.image-container {
+  width: 45%; /* Adjust width to balance the layout */
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.content {
+  width: 30%; /* Adjust width to leave space for the second image */
+  text-align: left;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.content .highlight {
+  color: #0056b3;
+}
+
+/* Button styles */
+.open-roles-button {
+  font-size: 1.2rem;
+  background-color: #0056b3;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover effect */
+.open-roles-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.open-roles-button:hover::before {
+  left: 0;
+}
+
+.open-roles-button:hover {
+  color: #0056b3;
+  z-index: 1;
+}
+
+/* Make sure text remains on top of the background */
+.open-roles-button span {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Second Image */
+.small-image-container {
+  width: 20%; /* Adjust the width of the smaller image */
+  text-align: right;
+}
+
+.small-team-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Disclaimer Section */
+.disclaimer-section {
+  padding: 20px 40px;
+  text-align: left;
+  margin-top: 50px;
+}
+
+.disclaimer-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  text-align: justify;
+  margin: 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .brilliant-minds-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .image-container,
+  .small-image-container {
+      width: 80%;
+      margin-bottom: 20px;
+  }
+
+  .content {
+      width: 100%;
+      text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .content h2 {
+      font-size: 2rem;
+  }
+
+  .open-roles-button {
+      font-size: 1rem;
+      padding: 8px 16px;
+  }
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .excellence-title {
+    font-size: 2.5rem;
+  }
+
+  .excellence-description {
+    font-size: 1rem;
+  }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .advantage-columns {
+    flex-direction: column;
+  }
+
+  .advantage-column {
+    border-left: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+  }
+
+  .advantage-column:last-child {
+    border-bottom: none;
+  }
+
+  .advantage-title {
+    font-size: 2.5rem;
+  }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .text-content {
+    padding-left: 3%;
+    max-width: 70%;
+  }
+
+  .secondary-section p {
+    font-size: 1rem;
+  }
+
+  .strategies-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .text-content {
+    padding-left: 2%;
+    max-width: 80%;
+  }
+
+  .secondary-section p {
+    font-size: 0.9rem;
+  }
+
+  .strategies-title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .title h2 {
+    font-size: 3rem;
+  }
+
+  .description p {
+    font-size: 1.5rem;
+  }
+}
