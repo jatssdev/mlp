@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Section</title>
+    <link rel="stylesheet" href="people-technology.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <video autoplay muted loop id="background-video">
+                <source src="./videos/people-technology-header.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+            <div class="header-content">
+                <h1 style="color: white;">Unlocking impact at scale</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Investment Section -->
+    <section class="investment-section">
+        <div class="container">
+            <div class="text-content">
+                <h2>Empowering investment professionals</h2>
+                <p>Investment teams around the world are empowered to build and grow their businesses. We strive for
+                    them to be
+                    more successful here than anywhere else.</p>
+            </div>
+            <div class="boxes-container">
+                <div class="box" onclick="toggleBox(this)">
+                    <h3>Capital stability</h3>
+                    <div class="box-content">
+                        <p>Take advantage of a capital base that enables focus and provides opportunities to scale...
+                        </p>
+                    </div>
+                </div>
+                <div class="box" onclick="toggleBox(this)">
+                    <h3>Autonomy and collaboration</h3>
+                    <div class="box-content">
+                        <p>Our platform fosters autonomy, while allowing teams to collaborate globally to share
+                            knowledge...</p>
+                    </div>
+                </div>
+                <!-- Add more boxes as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="testimonial-overlay"></div> <!-- Overlay div -->
+        <div class="container">
+            <div class="testimonial-content">
+                <div class="quote-text">
+                    <p class="quote-symbol">//</p>
+                    <p class="quote">
+                        Technologists at Millennium are encouraged to embrace change.
+                        This innovation mindset helps drive our business as we scale into new markets and locations.
+                    </p>
+                    <p class="author-name">Vlad Torgovnik</p>
+                    <p class="author-position">Chief Information Officer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Stacking Cards Section -->
+    <main>
+        <ul id="cards">
+            <li class="card" id="card_1" style="--index: 1;">
+                <div class="card__content">
+                    <h2>Card One</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><a href="#top" class="btn btn--accent">Read more</a></p>
+                    <figure>
+                        <img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-1.jpg"
+                            alt="Image description">
+                    </figure>
+                </div>
+            </li>
+            <li class="card" id="card_2" style="--index: 2;">
+                <div class="card__content">
+                    <h2>Card Two</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><a href="#top" class="btn btn--accent">Read more</a></p>
+                    <figure>
+                        <img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-2.jpg"
+                            alt="Image description">
+                    </figure>
+                </div>
+            </li>
+            <li class="card" id="card_3" style="--index: 3;">
+                <div class="card__content">
+                    <h2>Card Three</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><a href="#top" class="btn btn--accent">Read more</a></p>
+                    <figure>
+                        <img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-3.jpg"
+                            alt="Image description">
+                    </figure>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <section class="videoSection">
+        <div class="videos">
+            <div class="creative-fullpage--slider">
+                <div class="banner-horizental">
+                    <div class="swiper swiper-container-h">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slider-inner" data-swiper-parallax="100">
+                                    <video autoplay loop muted>
+                                        <source src="./videos/MLP.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="swiper-content" data-swiper-parallax="2000">
+                                        <div class="title-area">
+                                            <!-- title-area -->
+                                            <p class="tag">OUR VISION</p>
+                                            <a href="#" class="title"> DESIGN </a>
+                                            <!-- title area -->
+                                        </div>
+                                        <p class="disc">
+                                            Credibly leverage existing business experiences through
+                                            <br>
+                                            magnetic mindshare. Synergistically exploit
+                                            <br>
+                                            efficient partnerships world-class applications.
+                                        </p>
+                                        <div class="creative-btn--wrap">
+                                            <a class="creative-slide--btn openVideoModel"
+                                                data-video="./assets/heroVideo1.mp4" role="button" href="#0">
+                                                <div class="creative-btn--circle">
+                                                    <div class="circle">
+                                                        <div class="circle-fill"></div>
+                                                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
+                                                            class="circle-outline">
+                                                            <circle cx="25" cy="25" r="23"></circle>
+                                                        </svg>
+                                                        <div class="circle-icon">
+                                                            <svg viewBox="0 0 12 10" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg" class="icon-arrow">
+                                                                <path
+                                                                    d="M0 5.65612V4.30388L8.41874 4.31842L5.05997 0.95965L5.99054 0L10.9923 4.97273L6.00508 9.96L5.07451 9.00035L8.43328 5.64158L0 5.65612Z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="creative-btn--label">
+                                                    <div class="creative-btn__text">Take A Look</div>
+                                                    <div class="creative-btn__border"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="slider-inner" data-swiper-parallax="100">
+                                    <video autoplay loop muted>
+                                        <source src="./videos/MLP.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="swiper-content" data-swiper-parallax="2000">
+                                        <div class="title-area">
+                                            <!-- title-area -->
+                                            <p class="tag">INSPIRATION</p>
+                                            <a href="#" class="title"> MOTION </a>
+                                            <!-- title area -->
+                                        </div>
+                                        <p class="disc">
+                                            Conveniently formulate progressive users for error-free
+                                            <br>
+                                            interfaces. Monotonectally deploy superior
+                                            <br>
+                                            relationships without seamless infomediaries.
+                                        </p>
+                                        <div class="creative-btn--wrap">
+                                            <a class="creative-slide--btn openVideoModel"
+                                                data-video="./assets/heroVideo2.mp4" role="button" href="#0">
+
+
+                                                <div class="creative-btn--circle">
+                                                    <div class="circle">
+                                                        <div class="circle-fill"></div>
+                                                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
+                                                            class="circle-outline">
+                                                            <circle cx="25" cy="25" r="23"></circle>
+                                                        </svg>
+                                                        <div class="circle-icon">
+                                                            <svg viewBox="0 0 12 10" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg" class="icon-arrow">
+                                                                <path
+                                                                    d="M0 5.65612V4.30388L8.41874 4.31842L5.05997 0.95965L5.99054 0L10.9923 4.97273L6.00508 9.96L5.07451 9.00035L8.43328 5.64158L0 5.65612Z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="creative-btn--label">
+                                                    <div class="creative-btn__text">See More</div>
+                                                    <div class="creative-btn__border"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="slider-inner" data-swiper-parallax="100">
+                                    <video autoplay loop muted>
+                                        <source src="./videos/MLP.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="swiper-content" data-swiper-parallax="2000">
+                                        <div class="title-area">
+                                            <!-- title-area -->
+                                            <a href="#" class="title"> ENGINE </a>
+                                            <!-- title area -->
+                                        </div>
+                                        <p class="disc">
+                                            Conveniently formulate progressive users for error-free
+                                            <br>
+                                            interfaces. Monotonectally deploy superior
+                                            <br>
+                                            relationships without seamless infomediaries.
+                                        </p>
+                                        <div class="creative-btn--wrap">
+                                            <a class="creative-slide--btn openVideoModel"
+                                                data-video="./assets/heroVideo1.mp4" role="button" href="#0">
+                                                <div class="creative-btn--circle">
+                                                    <div class="circle">
+                                                        <div class="circle-fill"></div>
+                                                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
+                                                            class="circle-outline">
+                                                            <circle cx="25" cy="25" r="23"></circle>
+                                                        </svg>
+                                                        <div class="circle-icon">
+                                                            <svg viewBox="0 0 12 10" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg" class="icon-arrow">
+                                                                <path
+                                                                    d="M0 5.65612V4.30388L8.41874 4.31842L5.05997 0.95965L5.99054 0L10.9923 4.97273L6.00508 9.96L5.07451 9.00035L8.43328 5.64158L0 5.65612Z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="creative-btn--label">
+                                                    <div class="creative-btn__text">Take A Look</div>
+                                                    <div class="creative-btn__border"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-wrapper creative-button--wrapper">
+                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="right-arrow" width="30" height="30"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="left-arrow" width="30" height="30"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="slider-pagination-area">
+                            <h5 class="slide-range one">01</h5>
+                            <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal">
+                                <span class="swiper-pagination-progressbar-fill"
+                                    style="transform: translate3d(0px, 0px, 0px) scaleX(0.666667) scaleY(1); transition-duration: 1500ms;"></span>
+                            </div>
+                            <h5 class="slide-range three">03</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="videoModel">
+                <video controls id="modelPreviewVideo" src="./assets/heroVideo1.mp4"></video>
+                <div class="closebtn" id="closeVideoModel">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- LEaD Program Section -->
+    <section class="lead-program">
+        <div class="container-Millennium">
+            <div class="lead-content">
+                <h1>Millennium's LEaD Program</h1>
+                <p>An enriching 12-18 month rotational program, Millennium’s LEaD (Learning Engineering and Data)
+                    program is aimed at accelerating the growth of early career software engineers based in Miami.</p>
+                <a href="#" class="lead-button">Learn more <span>&#8594;</span></a>
+            </div>
+            <div class="lead-image">
+                <img src="./images/people-technology/promo-2.jpg" alt="LEaD Program Participants">
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="hero-section-end">
+        <video autoplay muted loop id="hero-video">
+          <source src="./videos/MLP.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div> <!-- Transparent overlay -->
+        <div class="hero-text">
+          <h1>Get to know the Millennium team</h1>
+          <button class="hero-button">People <span>→</span></button>
+        </div>
+      </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.18.3/dist/tsparticles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="people-technology.js"></script>
+</body>
+
+</html>
